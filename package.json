@@ -1,0 +1,21 @@
+{
+  "name": "github-dashboard",
+  "version": "0.0.0",
+  "description": "'Ember.js example using GitHub API, Bootstrap, and Grunt'",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": "git@github.com:kleinsch/github-dashboard.git",
+  "author": "Nick Kleinschmidt <nick.kleinschmidt@gmail.com>",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.5.0",
+    "grunt-contrib-jshint": "~0.3.0",
+    "grunt-contrib-less": "~0.5.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-neuter": "~0.4.0"
+  }
+}
