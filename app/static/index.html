@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Ember Starter Kit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="github-dashboard.css">
 </head>
 <body>
-
   <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
+  <div class="container">
+    <h1>Welcome to Ember.js</h1>
 
     {{outlet}}
+  </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="index">
+    <i class="icon-thumbs-up"></i>
     <ul>
     {{#each item in model}}
       <li>{{item}}</li>

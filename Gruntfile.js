@@ -47,7 +47,7 @@ module.exports = function(grunt) {
       compress: {
         files: {
           'dist/github-dashboard.css': [
-            'vendor/stylesheets/normalize.css',
+            'vendor/stylesheets/bootstrap.min.css',
             'dist/app.css'
           ]
         }
