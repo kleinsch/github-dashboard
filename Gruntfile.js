@@ -25,6 +25,19 @@ module.exports = function(grunt) {
       }
     },
 
+    ember_templates: {
+      compile: {
+        options: {
+          templateName: function(sourceFile) {
+            return sourceFile.replace(/app\/templates\//, '');
+          }
+        },
+        files: {
+          'build/templates.js': ["app/templates/**/*.hbs"]
+        }
+      }
+    },
+
     neuter: {
       options: {
         includeSourceURL: true
@@ -38,7 +51,7 @@ module.exports = function(grunt) {
       },
       app: {
         files: {
-          "dist/app.css": "app/app.less"
+          "build/app.css": "app/app.less"
         }
       }
     },
@@ -48,7 +61,7 @@ module.exports = function(grunt) {
         files: {
           'dist/github-dashboard.css': [
             'vendor/stylesheets/bootstrap.min.css',
-            'dist/app.css'
+            'build/app.css'
           ]
         }
       }
@@ -56,7 +69,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: ['<%= jshint.files %>', 'app/**', 'vendor/**'],
-      tasks: ['copy', 'jshint', 'neuter', 'less', 'cssmin']
+      tasks: ['copy', 'jshint', 'ember_templates', 'neuter', 'less', 'cssmin']
     }
 
   });
@@ -67,7 +80,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-neuter');
+  grunt.loadNpmTasks('grunt-ember-templates');
 
-  grunt.registerTask('default', ['copy', 'jshint', 'neuter', 'less', 'cssmin', 'watch']);
-  grunt.registerTask('build', ['copy', 'jshint', 'neuter', 'less', 'cssmin']);
+  grunt.registerTask('default', ['copy', 'jshint', 'ember_templates', 'neuter', 'less', 'cssmin', 'watch']);
+  grunt.registerTask('build', ['copy', 'jshint', 'ember_templates', 'neuter', 'less', 'cssmin']);
 };

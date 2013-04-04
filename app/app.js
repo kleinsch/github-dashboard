@@ -3,6 +3,8 @@ require('vendor/javascripts/bootstrap.min');
 require('vendor/javascripts/handlebars-1.0.0-rc.3');
 require('vendor/javascripts/ember-1.0.0-rc.2');
 
+require('build/templates');
+
 App = Ember.Application.create();
 
 App.Router.map(function() {
