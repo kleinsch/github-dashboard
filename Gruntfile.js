@@ -70,18 +70,28 @@ module.exports = function(grunt) {
     watch: {
       files: ['<%= jshint.files %>', 'app/**', 'vendor/**'],
       tasks: ['copy', 'jshint', 'ember_templates', 'neuter', 'less', 'cssmin']
+    },
+
+    connect: {
+      server: {
+        options: {
+          port: 9001,
+          base: 'dist'
+        }
+      }
     }
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-neuter');
   grunt.loadNpmTasks('grunt-ember-templates');
 
-  grunt.registerTask('default', ['copy', 'jshint', 'ember_templates', 'neuter', 'less', 'cssmin', 'watch']);
+  grunt.registerTask('default', ['copy', 'jshint', 'ember_templates', 'neuter', 'less', 'cssmin', 'connect', 'watch']);
   grunt.registerTask('build', ['copy', 'jshint', 'ember_templates', 'neuter', 'less', 'cssmin']);
 };
