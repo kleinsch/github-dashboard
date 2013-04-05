@@ -13,3 +13,5 @@ require('app/models/store');
 require('app/models/user');
 
 require('app/routes/router');
+
+require('app/controllers/users-controller');

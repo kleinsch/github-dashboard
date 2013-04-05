@@ -1,6 +1,10 @@
 <div class="users">
   <div class="row">
     <div class="span3">
+      <b>GitHub Username Search: </b>
+      {{view Ember.TextField placeholder="GitHub username" valueBinding="search" action="query"}}
+      <button {{action "query"}}>Search</button>
+
       <table class="table">
         <thead>
           <tr><th>Users</th></tr>
