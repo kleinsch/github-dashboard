@@ -13,9 +13,5 @@ App.UsersController = Ember.ArrayController.extend({
         }
       });
     });
-  },
-
-  filter: function() {
-    var content = this.get('content');
-  }.property('content')
+  }
 });
