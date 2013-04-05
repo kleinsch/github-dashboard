@@ -19,7 +19,6 @@
     "ok": true,
     "sinon": true,
     "require": true,
-    "Ember": true,
-    "GitHubDashboard": true
+    "Ember": true
   }
 }

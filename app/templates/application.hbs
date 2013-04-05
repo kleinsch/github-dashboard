@@ -1,5 +1,25 @@
-<div class="container">
-  <h1>Welcome to Ember.js</h1>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">GitHub Dashboard</a>
+    <ul class="nav">
 
+      {{! linkTo hack to get active class onto the li, instead of the a element }}
+      {{#linkTo "users" tagName="li" href=false}}
+        {{#linkTo 'users'}}Users{{/linkTo}}
+      {{/linkTo}}
+
+      {{#linkTo "repos" tagName="li" href=false}}
+        {{#linkTo 'repos'}}Repos{{/linkTo}}
+      {{/linkTo}}
+
+      {{#linkTo "about" tagName="li" href=false}}
+        {{#linkTo 'about'}}About{{/linkTo}}
+      {{/linkTo}}
+
+    </ul>
+  </div>
+</div>
+
+<div class="container">
   {{outlet}}
 </div>
