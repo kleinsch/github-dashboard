@@ -1,1 +1,14 @@
-<h2>{{login}}</h2>
+<div class="row-fluid">
+  <div class="span2">
+    <img {{bindAttr src="gravatarURL"}}/>
+  </div>
+  <div class="span10">
+    <h2>{{login}}</h2>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span12">
+    <p>Public Repositories: {{public_repo_count}}</p>
+    <p>Followers: {{followers_count}}</p>
+  </div>
+</div>
