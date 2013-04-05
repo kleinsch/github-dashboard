@@ -6,16 +6,16 @@ App.UsersController = Ember.ArrayController.extend({
     url += query;
     var me = this;
     $.getJSON(url,function(data){
-      console.log(data);
       $(data.users).each(function(index,value) {
         if(index < 10) {
-          var t = App.User.createRecord({
-            id: value.id,
-            login: value.login,
-            name: value.name
-          });
+          var model = App.User.createRecord(value);
+          model.set('loaded', true);
         }
       });
     });
-  }
+  },
+
+  filter: function() {
+    var content = this.get('content');
+  }.property('content')
 });

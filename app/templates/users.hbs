@@ -10,9 +10,9 @@
           <tr><th>Users</th></tr>
         </thead>
 
-        {{#each model}}
+        {{#each filter}}
         <tr><td>
-          {{#linkTo 'user' this}}{{name}}{{/linkTo}}
+          {{#linkTo 'user' this}}{{displayName}}{{/linkTo}}
         </tr></td>
         {{/each}}
       </table>
